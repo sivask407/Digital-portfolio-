@@ -3,142 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Digital Portfolio</title>
+    <title>Sivachandran S - Portfolio</title>
     <style>
-        /* Global Styles */
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
-            background-color: navy;
+            background: linear-gradient(to bottom, #061539, #0a1e50);
             color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
             margin: 0;
             padding: 0;
-            text-align: center;
         }
-        header {
-            background-color: goldenrod;
-            color: navy;
-            padding: 15px;
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        section {
-            background-color: grey;
+
+        /* Box Styling */
+        .box {
+            background: linear-gradient(to bottom, #f0f0f0, #dcdcdc);
             color: black;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 20px auto;
             width: 80%;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out, opacity 1s ease-in-out;
+            opacity: 0;
+            transform: translateY(30px);
         }
-        h1, h2 {
-            color: navy;
+
+        /* Fade-in Animation */
+        .show {
+            opacity: 1;
+            transform: translateY(0);
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
+
+        .box:hover {
+            transform: scale(1.02);
         }
-        ul li {
-            padding: 8px;
-            font-size: 18px;
-        }
-        a {
-            color: goldenrod;
+
+        /* Heading Styles */
+        h2, h3 {
+            color: black;
             font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        h2::after, h3::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: gold;
+            margin: 5px auto;
+        }
+
+        /* Profile Section */
+        .profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid gold;
+        }
+
+        .name {
+            font-size: 20px;
+            font-weight: bold;
+            color: gold;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        /* Icons */
+        .icon {
+            font-size: 18px;
+            margin-right: 8px;
+        }
+
+        .education .icon { color: #007bff; } /* Blue */
+        .skills .icon { color: #28a745; } /* Green */
+        .projects .icon { color: #ff5733; } /* Red */
+        .certifications .icon { color: #d4af37; } /* Gold */
+        .resume .icon { color: #17a2b8; } /* Cyan */
+        .contact .icon { color: #6c757d; } /* Grey */
+
+        /* Email & Link Styling */
+        .email a {
+            color: gold;
             text-decoration: none;
         }
-        a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            background-color: goldenrod;
-            color: navy;
-            padding: 10px;
+
+        /* Footer */
+        .footer {
             margin-top: 20px;
-            font-size: 16px;
-        }
-        img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid goldenrod;
-            margin-top: 10px;
-        }
-        /* Desktop View */
-        @media (min-width: 768px) {
-            .container {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
-            section {
-                width: 40%;
-            }
+            padding: 10px;
+            font-size: 14px;
+            color: #bbb;
         }
     </style>
 </head>
 <body>
 
-    <header>My Digital Portfolio</header>
-
-    <section>
-        <h1>Welcome to My Portfolio</h1>
-        <img src="your-photo.jpg" alt="Your Photo">
-        <p>Aspiring Full-Stack Developer | Passionate about Technology</p>
-    </section>
-
-    <div class="container">
-        <section>
-            <h2>About Me</h2>
-            <p>I am a <strong>second-year BSc IT student</strong> passionate about <strong>full-stack development</strong>.  
-               I am enhancing my skills in <strong>web and software development</strong> while preparing for real-world projects.</p>
-        </section>
-
-        <section>
-            <h2>Skills</h2>
-            <ul>
-                <li>Programming: C, C++, Java</li>
-                <li>Linux Basics</li>
-                <li>Front-end Web Development</li>
-                <li>Effective use of AI tools</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Projects</h2>
-            <ul>
-                <li><strong>Dress Shop Management</strong> – Shirt order management system</li>
-                <li><strong>Women Safety App</strong> – Emergency safety assistance app</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Education</h2>
-            <p>BSc in Information Technology</p>
-            <p>Vasavi College, Erode | Batch <strong>2023-2026</strong></p>
-        </section>
-
-        <section>
-            <h2>Resume</h2>
-            <a href="#">Download My Resume (PDF)</a>
-        </section>
-
-        <section>
-            <h2>Contact</h2>
-            <p>Email: yourname@example.com</p>
-            <p>Phone: +91 XXXXXXXXXX</p>
-        </section>
+    <div class="profile">
+        <img src="profile.jpg" alt="Sivachandran S">
+        <div class="name">Sivachandran S</div>
+        <div class="tagline">Aspiring Full-Stack Developer | Passionate about Technology</div>
     </div>
 
-    <footer>
-        &copy; 2025 Sivachandran S | All Rights Reserved
-    </footer>
+    <div class="box">
+        <h2>About Me</h2>
+        <p>I am a second-year <strong>BSc IT student</strong> passionate about <strong>full-stack development</strong>. Currently enhancing my skills in web and software development while preparing for real-world projects.</p>
+    </div>
+
+    <div class="box education">
+        <h2><span class="icon">🎓</span> Education</h2>
+        <p><strong>Bachelor of Science in Information Technology (BSc IT)</strong></p>
+        <p>Vasavi College, Erode | Batch <strong>2023-2026</strong></p>
+    </div>
+
+    <div class="box skills">
+        <h2><span class="icon">💡</span> Skills</h2>
+        <p>✔ Programming: C, C++, Java</p>
+        <p>✔ Front-End Web Development</p>
+        <p>✔ Linux Basics</p>
+        <p>✔ Effective use of AI tools</p>
+        <p>✔ English & Tamil Communication</p>
+        <p>✔ Adaptability & Problem-Solving</p>
+    </div>
+
+    <div class="box projects">
+        <h2><span class="icon">🚀</span> Projects</h2>
+        <p><strong>✔ Completed:</strong> Digital Portfolio (This Website)</p>
+        <p><strong>📌 Planned Projects:</strong></p>
+        <p>🔹 <strong>Dress Shop Management</strong> – Shirt order management system</p>
+        <p>🔹 <strong>Women Safety App</strong> – Emergency safety assistance app</p>
+    </div>
+
+    <div class="box certifications">
+        <h2><span class="icon">🏆</span> Certifications & Achievements</h2>
+        <p>✔ IBM Certified Cloud Course</p>
+        <p>✔ Completed Front-end Web Development Course</p>
+        <p>✔ Presented at National AI PPT Conference</p>
+    </div>
+
+    <div class="box resume">
+        <h2><span class="icon">📄</span> Resume</h2>
+        <p><a href="resume.pdf" style="color: gold; text-decoration: none;">Download My Resume (PDF)</a></p>
+    </div>
+
+    <div class="box contact">
+        <h2><span class="icon">📞</span> Contact</h2>
+        <p class="email"><a href="mailto:shivask0332@gmail.com">📧 shivask0332@gmail.com</a></p>
+        <p>📱 6382252407</p>
+    </div>
+
+    <div class="footer">
+        &copy; 2025 Sivachandran S. All Rights Reserved.
+    </div>
+
+    <script>
+        /* Animation Script */
+        document.addEventListener("DOMContentLoaded", function () {
+            const boxes = document.querySelectorAll(".box");
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            boxes.forEach(box => {
+                observer.observe(box);
+            });
+        });
+    </script>
 
 </body>
 </html>
